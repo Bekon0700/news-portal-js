@@ -54,64 +54,34 @@
         <div class="w-11/12 mx-auto">
             <!-- categories -->
             <section class="flex justify-between items-center py-6 text-2xl  text-gray-400" id="categories">
-                <a href="#" id="news" class="px-4 py-1 rounded-md hover:text-blue-600 hover:bg-blue-100">Home</a>
-                <a href="#" id="news" class="px-4 py-1 rounded-md hover:text-blue-600 hover:bg-blue-100">Home</a>
-                <a href="#" id="news" class="px-4 py-1 rounded-md hover:text-blue-600 hover:bg-blue-100">Home</a>
-                <a href="#" id="news" class="px-4 py-1 rounded-md hover:text-blue-600 hover:bg-blue-100">Home</a>
-                <a href="#" id="news" class="px-4 py-1 rounded-md hover:text-blue-600 hover:bg-blue-100">Home</a>
-                <a href="#" id="news" class="px-4 py-1 rounded-md hover:text-blue-600 hover:bg-blue-100">Home</a>
-                <a href="#" id="news" class="px-4 py-1 rounded-md hover:text-blue-600 hover:bg-blue-100">Home</a>
-                <a href="#" id="news" class="px-4 py-1 rounded-md hover:text-blue-600 hover:bg-blue-100">Home</a>
-                <a href="#" id="news" class="px-4 py-1 rounded-md hover:text-blue-600 hover:bg-blue-100">Home</a>
             </section>
-            <!-- item found -->
-            <section class="text-lg font-semibold text-black bg-white rounded-lg pl-4 py-5 mt-4">
-                <p>4 items found so far</p>
-            </section>
-            <!-- sort and trend btn -->
-            <section class="flex justify-between py-7">
-                <div class="flex items-center gap-2">
-                    <p class="text-lg font-semibold">sort by view:</p>
-                    <select name="options" id="sort-option" class="text-lg font-semibold py-1 px-2 rounded-md">
-                        <option value="default">Default</option>
-                        <option value="ascending">Ascending</option>
-                        <option value="descending">Descending</option>
-                    </select>
-                </div>
-                <div class="text-lg">
-                    <button class="px-3 py-1 rounded-lg bg-blue-400 text-white">Today's Pick</button>
-                    <button class="px-3 py-1 rounded-lg border border-blue-400 text-blue-400">Trending</button>
-                </div>
-            </section>
-            <!-- news list -->
-            <section class="my-2 grid grid-cols-1 gap-3">
-                <div class="h-full flex justify-center items-center" >
-                    <div class="lds-dual-ring hidden my-24" id="spinner"></div>
-                </div>
-                <div class=" bg-white rounded-2xl py-6 pl-6 pr-8 flex gap-6" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img src="https://i.ibb.co/M23fhxm/unsplash-Eh-Tc-C9s-YXsw.png" alt="" class="w-[400px] h-[400px] rounded-2xl">
-                    <div class="flex flex-col justify-evenly">
-                        <p class="text-3xl font-bold">Title</p>
-                        <p class="text-md text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem dignissimos facere molestias, nam illo eos placeat! Mollitia quibusdam doloribus, minima placeat est aperiam enim aut nostrum vel nemo quo tempore.
-                        Fugit sit necessitatibus architecto fugiat nihil minus obcaecati reprehenderit, aspernatur libero numquam. Officia voluptatum ducimus modi, adipisci quisquam doloribus veritatis distinctio. Provident dolore eligendi blanditiis et dolores, aut facere corrupti.
-                        Exercitationem iure voluptate corrupti. Obcaecati cumque minima sit quidem iure debitis, eveniet in amet porro deleniti distinctio illo tenetur unde sed ea quasi officiis ipsum quas voluptas molestias? Deleniti, quasi?
-                        Minima culpa, nulla voluptatem iure enim doloribus sint veniam incidunt id voluptatum laudantium recusandae fugiat, eius eum odio, magnam neque dolorum! Ex </p>
-                        <div class="flex justify-between">
-                            <div class="flex items-center gap-3">
-                                <img src="https://i.ibb.co/QnwC4sG/unsplash-Eh-Tc-C9s-YXsw-11.png" alt="" class="w-12 h-12 rounded-full">
-                                <div>
-                                    <p>Author</p>
-                                    <p class="text-gray-400">time</p>
-                                </div>
-                            </div>
-                            <div class="text-lg font-semibold text-black">
-                                <p>view: 15 million</p>
-                            </div>
-                            <button class="px-3 py-1 rounded-lg bg-blue-400 text-white">View More</button>
-                        </div>
+            <div class="h-full hidden justify-center items-center" id="spinner">
+                <div class="lds-dual-ring my-48" ></div>
+            </div>
+            <div id="news_section" class="hidden">
+                <!-- item found -->
+                <section class="text-lg font-semibold text-black bg-white rounded-lg pl-4 py-5 mt-4" id="item_found">
+                    <p>4 items found so far</p>
+                </section>
+                <!-- sort and trend btn -->
+                <section class="flex justify-between py-7">
+                    <div class="flex items-center gap-2">
+                        <p class="text-lg font-semibold">sort by view:</p>
+                        <select name="options" id="sort-option" class="text-lg font-semibold py-1 px-2 rounded-md">
+                            <option value="default">Default</option>
+                            <option value="ascending">Ascending</option>
+                            <option value="descending">Descending</option>
+                        </select>
                     </div>
-                </div>
-            </section>
+                    <div class="text-lg">
+                        <button class="px-3 py-1 rounded-lg bg-blue-400 text-white">Today's Pick</button>
+                        <button class="px-3 py-1 rounded-lg border border-blue-400 text-blue-400">Trending</button>
+                    </div>
+                </section>
+                <!-- news list -->
+                <section class="my-2 grid grid-cols-1 gap-3" id="items_list">
+                </section>
+            </div>
         </div>
     </main>
     
@@ -156,6 +126,7 @@
     </div>
     
 <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+<script src="./js/helper.js"></script>
 <script src="./js/main.js"></script>
 </body>
 </html>
