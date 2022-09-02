@@ -6,6 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Life</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <style>
+        .lds-dual-ring {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        }
+        .lds-dual-ring:after {
+        content: " ";
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border-radius: 50%;
+        border: 6px solid blue;
+        border-color: blue transparent blue transparent;
+        animation: lds-dual-ring 2s linear infinite;
+        }
+        @keyframes lds-dual-ring {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
     <header class="w-10/12 mx-auto py-6 border-b-2 border-gray-500">
@@ -26,7 +53,7 @@
     <main class="w-10/12 mx-auto">
         <div class="w-11/12 mx-auto">
             <!-- categories -->
-            <section class="flex justify-between items-center py-6 text-2xl  text-gray-400">
+            <section class="flex justify-between items-center py-6 text-2xl  text-gray-400" id="categories">
                 <a href="#" id="news" class="px-4 py-1 rounded-md hover:text-blue-600 hover:bg-blue-100">Home</a>
                 <a href="#" id="news" class="px-4 py-1 rounded-md hover:text-blue-600 hover:bg-blue-100">Home</a>
                 <a href="#" id="news" class="px-4 py-1 rounded-md hover:text-blue-600 hover:bg-blue-100">Home</a>
@@ -58,7 +85,10 @@
             </section>
             <!-- news list -->
             <section class="my-2 grid grid-cols-1 gap-3">
-                <div class=" bg-white rounded-2xl py-6 pl-6 pr-8 flex gap-6">
+                <div class="h-full flex justify-center items-center" >
+                    <div class="lds-dual-ring hidden my-24" id="spinner"></div>
+                </div>
+                <div class=" bg-white rounded-2xl py-6 pl-6 pr-8 flex gap-6" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <img src="https://i.ibb.co/M23fhxm/unsplash-Eh-Tc-C9s-YXsw.png" alt="" class="w-[400px] h-[400px] rounded-2xl">
                     <div class="flex flex-col justify-evenly">
                         <p class="text-3xl font-bold">Title</p>
@@ -82,8 +112,50 @@
                     </div>
                 </div>
             </section>
-            
         </div>
     </main>
+    
+
+    <!-- Modal -->
+    <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+        id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog relative w-auto pointer-events-none">
+            <div
+            class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+            <div
+                class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+                <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalLabel">Modal title</h5>
+                <button type="button"
+                class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+                data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body relative p-4">
+                Modal body text goes here.
+            </div>
+            <div
+                class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+                <button type="button" class="px-6
+                py-2.5
+                bg-blue-500
+                text-white
+                font-medium
+                text-xs
+                leading-tight
+                uppercase
+                rounded
+                shadow-md
+                hover:bg-blue-600 hover:shadow-lg
+                focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0
+                active:bg-blue-700 active:shadow-lg
+                transition
+                duration-150
+                ease-in-out" data-bs-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+<script src="./js/main.js"></script>
 </body>
 </html>
