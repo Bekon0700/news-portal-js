@@ -43,11 +43,11 @@ const contentCreator = (news) => {
         const newsDetailUrl = `https://openapi.programming-hero.com/api/news/${item._id}`
         const div = document.createElement('div')
         div.innerHTML = `
-            <div class=" bg-white rounded-2xl py-6 pl-6 pr-8 flex flex-col lg:flex-row gap-6" onclick="loadModalINfo('${newsDetailUrl}')" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <img src="${item.image_url}" alt="" class="w-[400px] h-[400px] rounded-2xl">
+            <div class=" bg-white rounded-2xl py-6 pl-6 pr-8 flex flex-col xl:flex-row gap-6" onclick="loadModalINfo('${newsDetailUrl}')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <img src="${item.image_url}" alt="" class="xl:w-[400px] xl:h-[400px] rounded-2xl">
                 <div class="flex flex-col justify-evenly gap-5 lg:gap-0">
-                    <p class="text-3xl font-bold">${item.title}</p>
-                    <p class=" truncate text-md text-gray-400 h-48 md:w-[220px] lg:w-[900px]">${item.details}</p>
+                    <p class="text-lg xl:text-3xl font-bold">${item.title}</p>
+                    <p class=" truncate text-md text-gray-400 h-14 xl:h-48 w-[220px] xl:w-[900px]">${item.details}</p>
                     <div class="flex flex-col gap-8 lg:flex-row lg:gap-0 justify-between">
                         <div class="flex items-center gap-4 lg:gap-4">
                             <img src="${item.author.img}" alt="" class="w-12 h-12 rounded-full">
