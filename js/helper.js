@@ -43,13 +43,13 @@ const contentCreator = (news) => {
         const newsDetailUrl = `https://openapi.programming-hero.com/api/news/${item._id}`
         const div = document.createElement('div')
         div.innerHTML = `
-            <div class=" bg-white rounded-2xl py-6 pl-6 pr-8 flex gap-6" onclick="loadModalINfo('${newsDetailUrl}')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <div class=" bg-white rounded-2xl py-6 pl-6 pr-8 flex flex-col lg:flex-row gap-6" onclick="loadModalINfo('${newsDetailUrl}')" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <img src="${item.image_url}" alt="" class="w-[400px] h-[400px] rounded-2xl">
-                <div class="flex flex-col justify-evenly">
+                <div class="flex flex-col justify-evenly gap-5 lg:gap-0">
                     <p class="text-3xl font-bold">${item.title}</p>
-                    <p class=" truncate text-md text-gray-400 h-48 w-[900px]">${item.details}</p>
-                    <div class="flex justify-between">
-                        <div class="flex items-center gap-3">
+                    <p class=" truncate text-md text-gray-400 h-48 md:w-[220px] lg:w-[900px]">${item.details}</p>
+                    <div class="flex flex-col gap-8 lg:flex-row lg:gap-0 justify-between">
+                        <div class="flex items-center gap-4 lg:gap-4">
                             <img src="${item.author.img}" alt="" class="w-12 h-12 rounded-full">
                             <div>
                                 <p>${item.author.name ? item.author.name : 'No value found'}</p>

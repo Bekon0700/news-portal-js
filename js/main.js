@@ -39,7 +39,7 @@ const loadSpecificNews = async (url, category) => {
 
 const showSpecificNews = (news, category) => {
     const itemDiv = document.getElementById('item_found')
-    itemDiv.innerHTML = news.length ? `<p>${news.length} items found for category ${category} </p>` : `<p>Nothing found for category ${category}</p>`
+    itemDiv.innerHTML = news.length ? `<p class="px-2">${news.length} items found for category ${category} </p>` : `<p class="px-2">Nothing found for category ${category}</p>`
     
 
     const selector = document.getElementById('sort-option')
