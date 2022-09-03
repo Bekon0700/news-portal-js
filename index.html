@@ -45,13 +45,13 @@
             </div>
             <!-- navs -->
             <div class="text-lg font-bold text-gray-400">
-                <a href="#" id="news" class="px-4 hover:text-blue-600">News</a>
-                <a href="#" id="blog" class="px-4 hover:text-blue-600">Blog</a>
+                <a href="#" id="news" class="px-4 text-blue-600">News</a>
+                <a href="#" id="blog" class="px-4">Blog</a>
             </div>
         </div>
     </header>
     <main class="w-10/12 mx-auto">
-        <div class="w-11/12 mx-auto">
+        <div class="w-11/12 mx-auto" id="fullNewsDiv">
             <!-- categories -->
             <section class="flex justify-between items-center py-6 text-2xl  text-gray-400" id="categories">
             </section>
@@ -61,7 +61,6 @@
             <div id="news_section" class="hidden">
                 <!-- item found -->
                 <section class="text-lg font-semibold text-black bg-white rounded-lg pl-4 py-5 mt-4" id="item_found">
-                    <p>4 items found so far</p>
                 </section>
                 <!-- sort and trend btn -->
                 <section class="flex justify-between py-7">
@@ -81,6 +80,21 @@
                 <!-- news list -->
                 <section class="my-2 grid grid-cols-1 gap-3" id="items_list">
                 </section>
+            </div>
+        </div>
+
+        <div class="w-11/12 mx-auto hidden" id="fullBlogDiv">
+            <div class="text-lg font-semibold text-black bg-white rounded-lg pl-4 py-5 mt-12">
+                <p class="text-center text-2xl text-green-600 pb-4">Difference between var, let, const</p>
+                <p>var declarations are globally scoped or function scoped while let and const are block scoped. var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared. They are all hoisted to the top of their scope.</p>
+            </div>
+            <div class="text-lg font-semibold text-black bg-white rounded-lg pl-4 py-5 mt-6">
+                <p class="text-center text-2xl text-green-600 pb-4">Difference between arrow and regular function</p>
+                <p>Unlike regular functions, arrow functions do not have their own this . The value of this inside an arrow function remains the same throughout the lifecycle of the function and is always bound to the value of this in the closest non-arrow parent function.</p>
+            </div>
+            <div class="text-lg font-semibold text-black bg-white rounded-lg pl-4 py-5 mt-6">
+                <p class="text-center text-2xl text-green-600 pb-4">Difference between map, forEach, filter and find</p>
+                <p>The main difference between forEach and filter is that forEach just loop over the array and executes the callback but filter executes the callback and check its return value. If the value is true element remains in the resulting array but if the return value is false the element will be removed for the resulting array.</p>
             </div>
         </div>
     </main>

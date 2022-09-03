@@ -77,5 +77,37 @@ const showModalData = data => {
     `
 }
 
+const isNews = document.getElementById('news')
+const isBlog = document.getElementById('blog')
+const fullNewsDiv = document.getElementById('fullNewsDiv')
+const fullBlogDiv = document.getElementById('fullBlogDiv')
+
+isNews.addEventListener('click', (e)=>{
+    const newsBtn = e.target
+    newsBtn.classList.add('text-blue-600')
+    isBlog.classList.remove('text-blue-600')
+
+    fullNewsDiv.classList.remove('hidden')
+    fullNewsDiv.classList.add('block')
+    fullBlogDiv.classList.add('hidden')
+
+
+})
+isBlog.addEventListener('click', (e)=>{
+    const blogBtn = e.target
+
+    blogBtn.classList.add('text-blue-600')
+    isNews.classList.remove('text-blue-600')
+
+    fullBlogDiv.classList.remove('hidden')
+    fullBlogDiv.classList.add('block')
+    fullNewsDiv.classList.add('hidden')
+
+})
+
+
+
+
+
 
 loadCategoriesData()
