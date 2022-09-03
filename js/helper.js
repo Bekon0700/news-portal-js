@@ -41,13 +41,20 @@ const contentCreator = (news) => {
         const time = new Date(item.author.published_date)
         const date = time.toLocaleDateString('en-US', options)
         const newsDetailUrl = `https://openapi.programming-hero.com/api/news/${item._id}`
+
+        const details = item.details.split(' ')
+        const first = details.slice(0, 70)
+        const second = details.slice(71, 100)
+        const firstPara = first.join(' ')
+        const secondPara = second.join(' ')
         const div = document.createElement('div')
         div.innerHTML = `
             <div class=" bg-white rounded-2xl py-6 pl-6 pr-8 flex flex-col xl:flex-row gap-6" onclick="loadModalINfo('${newsDetailUrl}')" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <img src="${item.image_url}" alt="" class="xl:w-[400px] xl:h-[400px] rounded-2xl">
-                <div class="flex flex-col justify-evenly gap-5 lg:gap-0">
+                <div class="flex flex-col justify-evenly gap-5 xl:gap-6">
                     <p class="text-lg xl:text-3xl font-bold">${item.title}</p>
-                    <p class=" truncate text-md text-gray-400 h-14 xl:h-48 w-[220px] xl:w-[900px]">${item.details}</p>
+                    <p class="text-md text-gray-400 text-justify">${firstPara}</p>
+                    <p class=" truncate text-md text-gray-400 w-[220px] xl:w-[900px]">${secondPara}</p>
                     <div class="flex flex-col gap-8 lg:flex-row lg:gap-0 justify-between">
                         <div class="flex items-center gap-4 lg:gap-4">
                             <img src="${item.author.img}" alt="" class="w-12 h-12 rounded-full">
