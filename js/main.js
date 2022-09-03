@@ -64,16 +64,19 @@ const loadModalINfo = async (url) => {
 }
 
 const showModalData = data => {
+    console.log(data)
     const modalTitle = document.getElementById('exampleModalLabel')
     const modalBody = document.getElementById('modalBody')
     modalTitle.innerText = data.title
     modalBody.innerHTML = `
-        <p>Author name: ${data.author.name ? data.author.name : 'No data found'}</p>
-        <p>Total Views: ${data.total_view ? data.total_view + ' million' : 'No data found'}</p>
-        <p>Today's pick: ${data.others_info.is_todays_pick}</p>
-        <p>Trending: ${data.others_info.is_trending}</p>
-        <p>Rating: ${data.rating.number}</p>
-        <p>Badge: ${data.rating.badge}</p>
+        <p><span class="text-lg font-semibold">Author name: </span>${data.author.name ? data.author.name : 'No data found'}</p>
+        <img src="${data.thumbnail_url}">
+        <p><span class="text-lg font-semibold">Details: </span>${data.details}</p>
+        <p><span class="text-lg font-semibold">Total Views:</span>${data.total_view ? data.total_view + ' million' : 'No data found'}</p>
+        <p><span class="text-lg font-semibold">Today's pick:</span>${data.others_info.is_todays_pick}</p>
+        <p><span class="text-lg font-semibold">Trending:</span>${data.others_info.is_trending}</p>
+        <p><span class="text-lg font-semibold">Rating:</span>${data.rating.number}</p>
+        <p><span class="text-lg font-semibold">Badge:</span>${data.rating.badge}</p>
     `
 }
 
